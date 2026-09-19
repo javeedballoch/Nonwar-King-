@@ -3,278 +3,384 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>NONWAR KING</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-body{
-  background:#080808;
-  color:white;
+body {
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: white;
 }
 
-header{
-  height:75px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 8%;
-  background:#0d0d0d;
-  border-bottom:1px solid #222;
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index:10;
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(5,5,5,0.95);
+    border-bottom: 1px solid #333;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo{
-  font-size:25px;
-  font-weight:bold;
-  color:#d4af37;
-  letter-spacing:2px;
+.logo {
+    color: #e0b82f;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:25px;
-  font-size:14px;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
 }
 
-nav a:hover{
-  color:#d4af37;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
 }
 
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:100px 20px 40px;
-  background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.9)),
-    radial-gradient(circle at center,#503b00,#080808 60%);
+nav a:hover {
+    color: #e0b82f;
 }
 
-.hero h1{
-  font-size:clamp(50px,10vw,110px);
-  color:#d4af37;
-  letter-spacing:8px;
-  text-shadow:0 0 30px #8b6b13;
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px 60px;
+    background:
+        radial-gradient(circle, #332900 0%, #090909 45%, #000 100%);
 }
 
-.hero p{
-  font-size:20px;
-  color:#ccc;
-  margin:20px 0 35px;
+.hero h1 {
+    font-size: 75px;
+    color: #e0b82f;
+    letter-spacing: 8px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 25px #8b6d00;
 }
 
-.btn{
-  display:inline-block;
-  padding:14px 30px;
-  background:#d4af37;
-  color:#000;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:4px;
-  transition:.3s;
+.hero p {
+    font-size: 24px;
+    margin-bottom: 35px;
+    color: #ddd;
 }
 
-.btn:hover{
-  background:white;
-  transform:scale(1.05);
+.btn {
+    display: inline-block;
+    padding: 17px 35px;
+    background: #e0b82f;
+    color: #050505;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
-section{
-  padding:90px 8%;
+.btn:hover {
+    transform: scale(1.05);
+    background: #fff;
 }
 
-.title{
-  text-align:center;
-  font-size:38px;
-  color:#d4af37;
-  margin-bottom:45px;
+/* SECTIONS */
+section {
+    padding: 100px 7%;
+    text-align: center;
 }
 
-.about{
-  max-width:850px;
-  margin:auto;
-  text-align:center;
-  line-height:1.8;
-  color:#bbb;
-  font-size:17px;
+.title {
+    color: #e0b82f;
+    font-size: 45px;
+    margin-bottom: 20px;
 }
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
+.subtitle {
+    color: #aaa;
+    margin-bottom: 45px;
 }
 
-.card{
-  background:#111;
-  border:1px solid #292929;
-  padding:35px 25px;
-  text-align:center;
-  border-radius:10px;
-  transition:.3s;
+/* ABOUT */
+.about-box {
+    max-width: 850px;
+    margin: auto;
+    background: #111;
+    padding: 35px;
+    border: 1px solid #292929;
+    border-radius: 15px;
+    line-height: 1.8;
+    color: #ccc;
 }
 
-.card:hover{
-  transform:translateY(-8px);
-  border-color:#d4af37;
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
 }
 
-.card .icon{
-  font-size:50px;
-  margin-bottom:20px;
+.card {
+    height: 230px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #111, #332900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #444;
+    transition: 0.4s;
 }
 
-.card h3{
-  color:#d4af37;
-  margin-bottom:12px;
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #e0b82f;
 }
 
-.card p{
-  color:#999;
-  line-height:1.6;
+.card span {
+    font-size: 55px;
 }
 
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
+/* VIDEO */
+.video-box {
+    max-width: 850px;
+    margin: auto;
 }
 
-.gallery div{
-  height:220px;
-  background:linear-gradient(135deg,#292929,#080808);
-  border:1px solid #333;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:50px;
-  border-radius:8px;
+.video-box iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 15px;
 }
 
-.contact{
-  text-align:center;
-  background:#0d0d0d;
+/* SOCIAL */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-footer{
-  text-align:center;
-  padding:25px;
-  color:#666;
-  border-top:1px solid #222;
+.social a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid #555;
+    padding: 14px 25px;
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
-@media(max-width:600px){
-  header{
-    padding:0 5%;
-  }
+.social a:hover {
+    background: #e0b82f;
+    color: #000;
+}
 
-  nav a{
-    margin-left:10px;
-    font-size:11px;
-  }
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #0b0b0b;
+    color: #777;
+}
 
-  .logo{
-    font-size:18px;
-  }
+/* MOBILE */
+@media (max-width: 700px) {
+
+    nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        letter-spacing: 4px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    .title {
+        font-size: 35px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .video-box iframe {
+        height: 220px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">♛ NONWAR KING</div>
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">👑 NONWAR KING</div>
 
-  <nav>
-    <a href="#home">HOME</a>
-    <a href="#about">ABOUT</a>
-    <a href="#gallery">GALLERY</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
-</header>
+    <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#gallery">GALLERY</a></li>
+        <li><a href="#videos">VIDEOS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+</nav>
 
+<!-- HOME -->
 <section class="hero" id="home">
-  <div>
-    <h1>NONWAR KING</h1>
-    <p>THE KINGDOM BEGINS HERE</p>
-    <a href="#about" class="btn">ENTER KINGDOM</a>
-  </div>
+    <div>
+        <h1>NONWAR KING</h1>
+
+        <p>THE KINGDOM BEGINS HERE</p>
+
+        <a href="#about" class="btn">ENTER KINGDOM</a>
+    </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
-  <h2 class="title">THE KING</h2>
+    <h2 class="title">👑 THE KING</h2>
 
-  <div class="about">
-    <p>
-      Welcome to the official world of Nonwar King.
-      A powerful kingdom built around strength, vision,
-      loyalty and greatness. Enter the kingdom and
-      discover the legend.
+    <p class="subtitle">
+        Welcome to the official Nonwar King kingdom.
     </p>
-  </div>
+
+    <div class="about-box">
+        <p>
+            Welcome to the world of <strong>NONWAR KING</strong>.
+            This website is the official kingdom where you can
+            explore the story, gallery and videos.
+        </p>
+        <br>
+        <p>
+            Stay connected and follow the journey of the King.
+        </p>
+    </div>
 </section>
 
-<section>
-  <h2 class="title">KINGDOM</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">👑</div>
-      <h3>THE KING</h3>
-      <p>The ruler of the kingdom, leading with power and vision.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">⚔️</div>
-      <h3>WARRIORS</h3>
-      <p>Fearless warriors standing together for the kingdom.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🏰</div>
-      <h3>KINGDOM</h3>
-      <p>A legendary world created for those who believe in greatness.</p>
-    </div>
-
-  </div>
-</section>
-
+<!-- GALLERY -->
 <section id="gallery">
-  <h2 class="title">GALLERY</h2>
+    <h2 class="title">🖼️ GALLERY</h2>
 
-  <div class="gallery">
-    <div>👑</div>
-    <div>⚔️</div>
-    <div>🏰</div>
-    <div>🔥</div>
-  </div>
+    <p class="subtitle">
+        Explore the kingdom gallery.
+    </p>
+
+    <div class="gallery">
+
+        <div class="card">
+            <span>👑</span>
+        </div>
+
+        <div class="card">
+            <span>⚔️</span>
+        </div>
+
+        <div class="card">
+            <span>🏰</span>
+        </div>
+
+        <div class="card">
+            <span>🔥</span>
+        </div>
+
+        <div class="card">
+            <span>🦁</span>
+        </div>
+
+        <div class="card">
+            <span>🌟</span>
+        </div>
+
+    </div>
 </section>
 
-<section class="contact" id="contact">
-  <h2 class="title">JOIN THE KINGDOM</h2>
-  <p style="color:#aaa;margin-bottom:25px;">
-    Follow the journey of Nonwar King.
-  </p>
+<!-- VIDEOS -->
+<section id="videos">
+    <h2 class="title">🎬 VIDEOS</h2>
 
-  <a href="#" class="btn">FOLLOW NOW</a>
+    <p class="subtitle">
+        Watch the latest journey of Nonwar King.
+    </p>
+
+    <div class="video-box">
+
+        <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            allowfullscreen>
+        </iframe>
+
+    </div>
 </section>
 
+<!-- CONTACT -->
+<section id="contact">
+
+    <h2 class="title">🔗 JOIN THE KINGDOM</h2>
+
+    <p class="subtitle">
+        Follow Nonwar King on social media.
+    </p>
+
+    <div class="social">
+
+        <a href="#" target="_blank">YouTube</a>
+
+        <a href="#" target="_blank">Facebook</a>
+
+        <a href="#" target="_blank">Instagram</a>
+
+        <a href="#" target="_blank">TikTok</a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
 <footer>
-  © 2026 NONWAR KING — ALL RIGHTS RESERVED
+    © 2026 NONWAR KING — ALL RIGHTS RESERVED
 </footer>
 
 </body>
-</html>
+  </html>
